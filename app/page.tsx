@@ -51,8 +51,8 @@ export default function Home() {
           <Paper className="w-full max-w-4xl mx-auto rounded-xl p-4 bg-white shadow-lg mt-8" ref={provided.innerRef} {...provided.droppableProps}>
             <Typography variant="h6" component="h2">Popular Pantry Items</Typography>
             <Grid container spacing={2} className="mt-4">
-              {dummyItems.map((item) => (
-                <Draggable key={item.id} draggableId={item.id} index={item.id}>
+              {dummyItems.map((item, index) => (
+                <Draggable key={item.id} draggableId={item.id} index={index}>
                   {(provided) => (
                     <Grid item xs={12} md={3} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                       <Paper className="p-4 bg-secondary text-white rounded-md cursor-pointer" onClick={() => handleDrop(item)}>
