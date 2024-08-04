@@ -1,4 +1,6 @@
 // components/Inventory.tsx
+"use client"; // Add this at the top of the file
+
 import React, { useState } from 'react';
 import InventoryItem from './InventoryItem';
 
