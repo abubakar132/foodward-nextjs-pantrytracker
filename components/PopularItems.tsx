@@ -1,4 +1,5 @@
-// components/PopularItems.tsx
+"use client";
+
 import React from 'react';
 import PopularItem from './PopularItem';
 
