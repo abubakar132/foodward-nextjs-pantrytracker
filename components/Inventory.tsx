@@ -16,17 +16,27 @@ const Inventory: React.FC = () => {
   const [totalCost, setTotalCost] = useState(0);
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault(); // Ensure the drop is handled
+
     const name = e.dataTransfer.getData('name');
-    const item = { id: Date.now().toString(), image: '/path/to/image', name, price: 10, quantity: 1 }; // Example item
-    setItems([...items, item]);
-    setTotalCost(totalCost + item.price);
+    if (name) {
+      const item = { 
+        id: Date.now().toString(), 
+        image: '/path/to/image', // Update with actual image path or data
+        name, 
+        price: 10, 
+        quantity: 1 
+      }; 
+      setItems((prevItems) => [...prevItems, item]);
+      setTotalCost((prevTotal) => prevTotal + item.price);
+    }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-bg">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F6FE]">
       <h1 className="text-2xl font-bold mb-4">My Inventory</h1>
       <div className="relative">
-        <div className="absolute top-0 right-0 bg-primary text-white rounded-full px-4 py-2">
+        <div className="absolute top-0 right-0 bg-[#6985C0] text-white rounded-full px-4 py-2">
           Total Cost: ${totalCost.toFixed(2)}
         </div>
         <div
