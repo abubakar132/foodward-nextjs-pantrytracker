@@ -1,5 +1,5 @@
 // components/Inventory.tsx
-
+"use client"; 
 import React, { useState } from 'react';
 import InventoryItem from './InventoryItem';
 
