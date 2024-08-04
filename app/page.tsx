@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { storage } from '../firebase';
 import { Button, Badge, Container, Typography, Grid, Paper } from '@mui/material';
